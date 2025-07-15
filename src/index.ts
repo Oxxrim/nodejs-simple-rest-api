@@ -1,5 +1,6 @@
 import express from 'express';
 import dotenv from 'dotenv';
+import logger from './utils/logger';
 import apiRoutes from './routes/api';
 
 dotenv.config();
@@ -11,5 +12,5 @@ app.use('/api', apiRoutes);
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
-    console.log(`Server running on port ${PORT}`);
+    logger.info(`Server running on port ${PORT}`);
 });
