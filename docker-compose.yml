@@ -1,0 +1,29 @@
+version: '3.8'
+
+services:
+  db:
+    image: postgres:15
+    container_name: simple_rest_db
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: simple_rest
+    ports:
+      - '5432:5432'
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+#  backend:
+#    build: .
+#    depends_on:
+#      - db
+#    environment:
+#      DATABASE_URL: postgres://postgres:postgres@db:5432/simple_rest
+#      JWT_SECRET: secretKey
+#      PORT: 8080
+#    ports:
+#      - "8080:8080"
+
+volumes:
+  pgdata:
