@@ -3,6 +3,7 @@ import dotenv from 'dotenv';
 import logger from './utils/logger';
 import apiRoutes from './routes/api';
 import authRoutes from './routes/authRoutes';
+import productRoutes from './routes/productRoutes';
 
 dotenv.config();
 
@@ -11,6 +12,7 @@ app.use(express.json());
 
 app.use('/api', apiRoutes);
 app.use('/auth', authRoutes);
+app.use(productRoutes);
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {

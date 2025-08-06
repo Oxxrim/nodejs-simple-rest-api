@@ -26,3 +26,11 @@ enum Role {
   USER
   ADMIN
 }
+
+model Product {
+  article     String   @id
+  name        String
+  description String
+  price       Float
+  quantity    Int
+}
